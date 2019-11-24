@@ -27,13 +27,13 @@ void CSortSearch::Print()
 	}
 }
 
-void CSortSearch::Swap(int Idx1, int Idx2)
+void CSortSearch::Swap(int idx1, int idx2)
 {
 	int temp;
 
-	temp = Items[Idx1];
-	Items[Idx1] = Items[Idx2];
-	Items[Idx2] = temp;
+	temp = Items[idx1];
+	Items[idx1] = Items[idx2];
+	Items[idx2] = temp;
 }
 
 void CSortSearch::BubbleSort()
@@ -81,18 +81,18 @@ void CSortSearch::SelectionSort()
 	}
 }
 
-int CSortSearch::BinarySearch(int Val)
+int CSortSearch::BinarySearch(int val)
 {
 	int low = 0, mid, high = kCount - 1;
 
 	while (low <= high)
 	{
 		mid = (low + high) / 2;
-		if (Items[mid] < Val)
+		if (Items[mid] < val)
 		{
 			low = mid + 1;
 		}
-		else if (Items[mid] > Val)
+		else if (Items[mid] > val)
 		{
 			high = mid - 1;
 		}
@@ -100,10 +100,10 @@ int CSortSearch::BinarySearch(int Val)
 			break;
 	}
 
-	if (Items[mid] == Val)
-		printf("%u is at position:%u", Val, mid);
+	if (Items[mid] == val)
+		printf("%u is at position:%u", val, mid);
 	else
-		printf("%u not found in array", Val);
+		printf("%u not found in array", val);
 
 	return mid;
 }

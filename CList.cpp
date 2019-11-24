@@ -20,13 +20,13 @@ PSINGLY_LIST CList::LastNode()
 	return node;
 };
 
-PSINGLY_LIST CList::FindPrevious(int Val)
+PSINGLY_LIST CList::FindPrevious(int val)
 {
 	bool found = false;
 	PSINGLY_LIST node = Head, prevNode = NULL;
 	while (node)
 	{
-		if (node->val == Val)
+		if (node->val == val)
 		{
 			if (node == Head)
 				prevNode = Head;
@@ -63,9 +63,9 @@ bool CList::Add(int Val)
 	return true;
 }
 
-bool CList::Remove(int Val)
+bool CList::Remove(int val)
 {
-	PSINGLY_LIST prevNode = FindPrevious(Val);
+	PSINGLY_LIST prevNode = FindPrevious(val);
 	if (prevNode != NULL)
 	{
 		PSINGLY_LIST remNode;
