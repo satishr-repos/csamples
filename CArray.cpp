@@ -1,15 +1,15 @@
 #include <iostream>
 #include <time.h>
 #include <iomanip>
-#include "csortsearch.h"
+#include "CArray.h"
 using namespace std;
 
-CSortSearch::CSortSearch()
+CArray::CArray()
 {
 	InitList();
 }
 
-void CSortSearch::InitList()
+void CArray::InitList()
 {
 	for (int i = 0; i < kCount; i++)
 	{
@@ -17,7 +17,7 @@ void CSortSearch::InitList()
 	}
 }
 
-void CSortSearch::Print()
+void CArray::Print()
 {
 	for (int i = 0; i < kCount; i++)
 	{
@@ -27,7 +27,7 @@ void CSortSearch::Print()
 	}
 }
 
-void CSortSearch::Swap(int idx1, int idx2)
+void CArray::Swap(int idx1, int idx2)
 {
 	int temp;
 
@@ -36,7 +36,7 @@ void CSortSearch::Swap(int idx1, int idx2)
 	Items[idx2] = temp;
 }
 
-void CSortSearch::BubbleSort()
+void CArray::BubbleSort()
 {
 	int i, swapped;
 
@@ -62,7 +62,7 @@ void CSortSearch::BubbleSort()
 	}
 }
 
-void CSortSearch::SelectionSort()
+void CArray::SelectionSort()
 {
 	int i, j;
 
@@ -81,7 +81,7 @@ void CSortSearch::SelectionSort()
 	}
 }
 
-int CSortSearch::BinarySearch(int val)
+int CArray::BinarySearch(int val)
 {
 	int low = 0, mid, high = kCount - 1;
 

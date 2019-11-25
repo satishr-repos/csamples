@@ -18,18 +18,18 @@
     <ClCompile Include="SimpleCApp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CList.cpp">
+    <ClCompile Include="CLinkedList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CSortSearch.cpp">
+    <ClCompile Include="CArray.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="clist.h">
+    <ClInclude Include="CLinkedList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CSortSearch.h">
+    <ClInclude Include="CArray.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

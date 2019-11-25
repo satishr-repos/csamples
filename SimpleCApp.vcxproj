@@ -151,13 +151,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="CList.cpp" />
-    <ClCompile Include="CSortSearch.cpp" />
+    <ClCompile Include="CLinkedList.cpp" />
+    <ClCompile Include="CArray.cpp" />
     <ClCompile Include="SimpleCApp.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="clist.h" />
-    <ClInclude Include="CSortSearch.h" />
+    <ClInclude Include="CLinkedList.h" />
+    <ClInclude Include="CArray.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

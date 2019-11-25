@@ -7,19 +7,19 @@ typedef struct __SinglyList
 
 } SINGLY_LIST, * PSINGLY_LIST;
 
-class CList
+class CLinkedList
 {
 	PSINGLY_LIST	Head;
 	int				Count;
 	int				Type;
 
 public:
-	CList();
+	CLinkedList();
 	bool Add(int Val);
 	bool Remove(int Val);
 	void Reverse();
 	void Print();
-	~CList();
+	~CLinkedList();
 
 private:
 	PSINGLY_LIST LastNode();

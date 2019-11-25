@@ -1,15 +1,15 @@
 #include <iostream>
-#include "clist.h"
+#include "CLinkedList.h"
 using namespace std;
 
-CList::CList()
+CLinkedList::CLinkedList()
 {
 	Head = NULL;
 	Count = 0;
 	Type = 0;
 }
 
-PSINGLY_LIST CList::LastNode()
+PSINGLY_LIST CLinkedList::LastNode()
 {
 	PSINGLY_LIST node = Head;
 	while (node && node->next)
@@ -20,7 +20,7 @@ PSINGLY_LIST CList::LastNode()
 	return node;
 };
 
-PSINGLY_LIST CList::FindPrevious(int val)
+PSINGLY_LIST CLinkedList::FindPrevious(int val)
 {
 	bool found = false;
 	PSINGLY_LIST node = Head, prevNode = NULL;
@@ -42,7 +42,7 @@ PSINGLY_LIST CList::FindPrevious(int val)
 	return found ? prevNode : NULL;
 };
 
-bool CList::Add(int Val)
+bool CLinkedList::Add(int Val)
 {
 	PSINGLY_LIST lastNode;
 	PSINGLY_LIST newNode = new SINGLY_LIST;
@@ -63,7 +63,7 @@ bool CList::Add(int Val)
 	return true;
 }
 
-bool CList::Remove(int val)
+bool CLinkedList::Remove(int val)
 {
 	PSINGLY_LIST prevNode = FindPrevious(val);
 	if (prevNode != NULL)
@@ -91,7 +91,7 @@ bool CList::Remove(int val)
 	return false;
 }
 
-void CList::Reverse()
+void CLinkedList::Reverse()
 {
 	PSINGLY_LIST prev, current=NULL, node;
 
@@ -108,7 +108,7 @@ void CList::Reverse()
 	Head = current;
 }
 
-void CList::Print()
+void CLinkedList::Print()
 {
 	int i;
 	PSINGLY_LIST node;
@@ -120,7 +120,7 @@ void CList::Print()
 	}
 }
 
-CList::~CList()
+CLinkedList::~CLinkedList()
 {
 	PSINGLY_LIST node;
 

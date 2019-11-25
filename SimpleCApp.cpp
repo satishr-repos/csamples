@@ -2,10 +2,9 @@
 //
 #include <iostream>
 #include <time.h>
-#include "clist.h"
-#include "csortsearch.h"
+#include "CLinkedList.h"
+#include "CArray.h"
 using namespace std;
-
 
 #define ARRAY_SIZE(a) (sizeof(a) / sizeof(a[0]))
 
@@ -29,17 +28,17 @@ void fibonacci(int n)
 
 int main()
 {
-	CList list;
-	CSortSearch sort;
+	CLinkedList list;
+	CArray sort;
 	int val;
 
 	/* initialize random seed: */
 	srand((unsigned int)time(NULL));
-	sort.InitList();
 	//fibonacci(25);
 
 	/* sort operations
 	*/
+	sort.InitList();
 	cout << "Unsorted List" << endl;
 	sort.Print();
 

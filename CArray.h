@@ -1,6 +1,6 @@
 #pragma once
 
-class CSortSearch
+class CArray
 {
 	static const int kCount = 100;
 	int Items[kCount];
@@ -8,7 +8,7 @@ class CSortSearch
 	void Swap(int Idx1, int Idx2);
 
 public:
-	CSortSearch();
+	CArray();
 	void InitList();
 	void Print();
 	void BubbleSort();
