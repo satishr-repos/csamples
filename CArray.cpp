@@ -4,27 +4,65 @@
 #include "CArray.h"
 using namespace std;
 
-CArray::CArray()
+CArray::CArray(int arraySize)
 {
-	InitList();
+	Count = arraySize;
+	Items = new int[Count];
+}
+
+CArray::~CArray()
+{
+	delete[] Items;
 }
 
 void CArray::InitList()
 {
-	for (int i = 0; i < kCount; i++)
+	for (int i = 0; i < Count; i++)
 	{
 		Items[i] = rand() % 100;
 	}
 }
 
+CArray& CArray::operator+(CArray& srcList)
+{
+	int srcCount = srcList.GetCount();
+	int total = srcCount + Count;
+	int *newItems, i, j;
+	CArray dest;
+
+	newItems = new int[total];
+	if (!newItems)
+		goto out;
+
+	j = srcCount - 1;
+	i = Count - 1;
+	for (int k = total - 1; k >= 0; k--)
+	{
+		if ( (j < 0) || 
+			 ((i >= 0) && (Items[i] > srcList.Get(j))) )
+			newItems[k] = Items[i--];
+		else
+			newItems[k] = srcList.Get(j--);
+	}
+
+	delete[] Items;
+
+	Count = total;
+	Items = newItems;
+out:
+	return *this;
+}
+
 void CArray::Print()
 {
-	for (int i = 0; i < kCount; i++)
+	for (int i = 0; i < Count; i++)
 	{
 		cout << setfill('0') << setw(2) << Items[i] << " ";
 		if (!((i+1) % 20))
 			cout << endl;
 	}
+
+	cout << endl;
 }
 
 void CArray::Swap(int idx1, int idx2)
@@ -38,7 +76,7 @@ void CArray::Swap(int idx1, int idx2)
 
 void CArray::BubbleSort()
 {
-	int i, swapped;
+	int i, swapped=0;
 
 	for (i = 0; ; i++)
 	{
@@ -49,7 +87,7 @@ void CArray::BubbleSort()
 		}
 
 		// reached end of list, start from begining again
-		if (i >= kCount - 2)
+		if (i >= Count - 2)
 		{
 			if (swapped)
 			{
@@ -66,10 +104,10 @@ void CArray::SelectionSort()
 {
 	int i, j;
 
-	for (i = 0; i < kCount; i++)
+	for (i = 0; i < Count; i++)
 	{
 		int least = i;
-		for (j = i; j < kCount; j++)
+		for (j = i; j < Count; j++)
 		{
 			if (Items[least] > Items[j])
 			{
@@ -83,7 +121,7 @@ void CArray::SelectionSort()
 
 int CArray::BinarySearch(int val)
 {
-	int low = 0, mid, high = kCount - 1;
+	int low = 0, mid, high = Count - 1;
 
 	while (low <= high)
 	{
